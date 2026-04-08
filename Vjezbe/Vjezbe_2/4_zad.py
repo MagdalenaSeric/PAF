@@ -11,8 +11,7 @@ print("Gornja i donja integralna suma su: ", calc.pravokutna_metoda(f, 0, 1, 100
 print("Integral pomoću trapeza: ", calc.trapezna_metoda(f, 0, 1, 100))
 
 n = np.arange(50, 501, 20)
-x = np.linspace(50, 500, 200)
-y = np.full_like(x, 11 / 3)
+y = [11 / 3] * len(n)
 
 trapezni = []
 prav_gornji = []
@@ -24,9 +23,9 @@ for i in n:
     prav_gornji.append(g)
     prav_donji.append(d)
 
-plt.plot(x, y, label="Analitičko rješenje")
+plt.plot(n, y, label="Analitičko rješenje", linewidth=2)
 plt.title("Numerička integracija funkcije 2x^2 + 3")
-plt.xlabel("n")
+plt.xlabel("n (broj podintervala)")
 plt.ylabel("Vrijednost integrala")
 plt.scatter(n, trapezni, s=10, label="Trapezna metoda")
 plt.scatter(n, prav_gornji, s=10, label="Gornja suma")

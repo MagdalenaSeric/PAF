@@ -34,7 +34,7 @@ for dt in vrijednosti_dt:
 
 plt.plot(vrijednosti_dt, odstupanja)
 plt.xlabel("dt/s")
-plt.ylabel("Relativna pogreška / %")
+plt.ylabel("Relativna pogreška")
 plt.grid()
 plt.title("Ovisnost relativne pogreške o vrijednosti dt")
 plt.show()

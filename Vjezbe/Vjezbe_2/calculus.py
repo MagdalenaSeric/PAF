@@ -5,7 +5,10 @@ def derivacija(f, x, h, metoda="three-step"):
     if metoda == "two-step":
         return (f(x + h) - f(x)) / h
 
-    return (f(x + h) - f(x - h)) / (2 * h)
+    if metoda == "three-step":
+        return (f(x + h) - f(x - h)) / (2 * h)
+
+    raise ValueError("Nepoznata metoda!")
 
 
 def derivacija_na_intervalu(f, a, b, h, metoda="three-step"):

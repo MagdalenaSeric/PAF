@@ -37,9 +37,10 @@ class Particle:
     def plot_trajectory(self, dt=0.005):
         self.range(dt)
 
-        plt.plot(self.lista_x, self.lista_y)
+        plt.plot(self.lista_x, self.lista_y, label="Numerička putanja")
         plt.xlabel("x/m")
         plt.ylabel("y/m")
         plt.title("Putanja čestice")
         plt.grid()
+        plt.legend()
         plt.show()
