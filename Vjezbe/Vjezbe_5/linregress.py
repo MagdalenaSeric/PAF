@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as plt
 
 M = [0.052, 0.124, 0.168, 0.236, 0.284, 0.336]
 fi = [0.1745, 0.3491, 0.5236, 0.6981, 0.8727, 1.0472]
@@ -23,3 +24,18 @@ sigma_a = math.sqrt((1/n) * ((suma_y2 / suma_x2) - a**2))
 
 print("Modul torzije (Dt) aluminijske šipke:", a)
 print("Standardna pogreška:", sigma_a)
+
+M_reg = []
+
+for x in fi:
+    M_reg.append(a*x)
+
+plt.scatter(fi, M, label = "Mjereni podatci", color = "red")
+plt.plot(fi, M_reg, label = "Linearna regresija")
+plt.xlabel("φ/rad")
+plt.ylabel("M/Nm")
+plt.title("Graf linearne regresije")
+
+plt.grid()
+plt.legend()
+plt.show()
